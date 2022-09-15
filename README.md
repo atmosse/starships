@@ -1,18 +1,10 @@
-##Spaceship Simulation
+## Spaceship Simulation
 
-###Abstract
+### Abstract
 
 For my final project, the task was to create my own game simulation. I decided to base it on my previous Pinball game from project 10 and build upon that. Since I project 10 was already a simulation of a ball bouncing around obstacles, I decided to include the Ship class I coded in Lab 11. Using the collision library, I could code the collisions between a ball and a ship. Therefore, I ended up creating my ‘SpaceStar Catcher’ game where I have starships roaming around trying to bump into a ball (star) to gather points. In the end, the player who first collects a particular amount of collisions wins the game. Despite the simplicity of the game, it encourages the players to position smartly and stay in control of their spaceship in order to collect collision as quickly as possible. As a result, I naturally extended the required minimum by making the game playable by two players. Moreover, with some additional coding, I created the option for the user to decide whether to play the game against or exit it all together using particular keyboard keys. Overall, the biggest change from the previous project was the way I coded the game simulation with its separate screens for start, gameplay, and end into smaller separate functions before uniting them in the main() function. In the end, the final product is perfectly functional and fulfills the idea behind it.
 
-
-
-
-
-
-
-
-
-###Solution to Tasks
+### Solution to Tasks
 Since I had to make coding easier with breaking down the game’s separate scenes/screens into different functions that resembled them, before doing anything, I designed what my game looks like.
 Firstly, I needed to have a start window. In it, I wanted to only include instructions using the Text() function of the Zelle graphics package. There I described the A, D, W keys to be used by Player 1 and the Left, Right, Up keys to be used by Player 2 as well as the option to press Q to exit the game at any time. Then, I decided I needed another function, besides the start window, to undraw the start window before proceeding to the Main Phase.
 Secondly, I decided to keep the Main Phase simple and in line with my previous project. Therefore, I decided to keep the window in the same margins (500, 500) and borrow some of the code from the simulation project 10 for my obstacles, the ball and its interactions with the obstacles. Then, I decided to use the Ship class from the Lab 11 and expand it by creating two Ships instead of just one. Then I decided to use the collision.py library to code the collision between the ships and the ball in order to calculate the players’ separate scores. After the while loop simulation, the function would undraw() the existing objects to make room for the End Screen.
@@ -24,5 +16,5 @@ After all, I only had the End Screen left to code. My function EndScreen() took 
 while playAgain: to ensure the calling of the functions Gameplay() and EndScreen() kept happening when the player presses R at the end of a game, or ended when the player presses Q to exit the game altogether. The video of the final product, with the extension of being able to play the game over and over without calling the game from the Terminal can be seen here: https://vimeo.com/378721383
 What is also seen is how my main() function works in the way it enables the user to play multiple games in one program run -- the playAgain bool variable changes based on the user key input returned with EndScreen() and that decides whether the loop will continue (i.e. whether another game will play.)
 
-###Reflection
+### Reflection
 This project helped me extend my previous project with the Ship (spaceship) object. Overall, I further learned how to break ideas down to fundamentals like design, leading into separate functions, and then into the full product unified in the main() function. Again, I was surprised by how efficient coding can be and internalized improved concepts on how to make that work for me; I am excited to see what CS231 will teach me more about! The only downside is that I coded this game on Windows and did not find a way to make my program play music during gameplay. If I had the chance, I would include So Heavy I Fell Through The Earth by Grimes, so I would encourage you to play that song while testing my program for the full experience.
